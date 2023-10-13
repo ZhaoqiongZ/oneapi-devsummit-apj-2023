@@ -39,26 +39,29 @@ python -m venv $ENV_NAME
 source $ENV_NAME/bin/activate
 pip install --upgrade pip
 pip install scikit-image jupyter matplotlib tqdm ipykernel prettytable
+pip3 install torch==2.0.1  --index-url https://download.pytorch.org/whl/cpu
+pip3 install intel_extension_for_pytorch
+pip install diffusers transformers accelerate scipy safetensors
 jupyter kernelspec uninstall $ENV_NAME -y
 python -m ipykernel install --user --name=$ENV_NAME
 deactivate
 
 
-# Create IPEX Env GPU
-ENV_NAME=ipex_xpu
-deactivate
-rm -rf $ENV_NAME
-python -m venv $ENV_NAME
-source $ENV_NAME/bin/activate
-pip install --upgrade pip
-pip install scikit-image jupyter matplotlib tqdm ipykernel prettytable
-python -m pip install torch==2.0.1a0 torchvision==0.15.2a0 intel_extension_for_pytorch==2.0.110+xpu --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
-pip install ipykernel
-jupyter kernelspec uninstall $ENV_NAME -y
-python -m ipykernel install --user --name=$ENV_NAME
+# # Create IPEX Env GPU
+# ENV_NAME=ipex_xpu
+# deactivate
+# rm -rf $ENV_NAME
+# python -m venv $ENV_NAME
+# source $ENV_NAME/bin/activate
+# pip install --upgrade pip
+# pip install scikit-image jupyter matplotlib tqdm ipykernel prettytable
+# python -m pip install torch==2.0.1a0 torchvision==0.15.2a0 intel_extension_for_pytorch==2.0.110+xpu --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
+# pip install ipykernel
+# jupyter kernelspec uninstall $ENV_NAME -y
+# python -m ipykernel install --user --name=$ENV_NAME
 
 
-#comment-out
+# #comment-out
 
 # Start Jupyter
 activate_oneapi
