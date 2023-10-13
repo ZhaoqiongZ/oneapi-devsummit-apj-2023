@@ -1,5 +1,3 @@
-<p align="center"><img width="582" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/f1219383-6843-4c51-813a-d3d0b1fea809">
-</p>
 
 ## Welcome
 Thank you for choosing to attend the AI Workshop @ oneAPI Devsummit 2023. This github repository holds the necessary artifacts for participating in the handson AI workshop. <br>!!*Update* --> For a detailed walkthrough of this content, refer the presentation recording [here](https://youtu.be/mN_49JgjY-I)
@@ -54,8 +52,8 @@ Run the below steps (1 through 7) to get started with the handson workshop on ID
    <details><summary>--> info</summary><img width="440" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/6b5bccad-b86e-4177-93f3-dabba7cdf0f9"></details>
 3. Clone this repository and change directory. <br>
    ```
-   git clone https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023.git
-   cd oneapi-devsummit-sea-2023
+   git clone https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023.git
+   cd oneapi-devsummit-apj-2023
    ```
    <details><summary>--> info</summary><img width="644" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/509eef84-3e7e-4902-93eb-f5ce946279db"></details>
 4. Prepare environment.<br>
