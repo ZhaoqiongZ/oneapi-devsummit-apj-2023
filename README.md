@@ -4,7 +4,7 @@ Thank you for choosing to attend the AI Workshop @ oneAPI Devsummit 2023. This g
 
 ## Objectives
 1. Get the hands-on experience on the new [Intel® Developer Cloud (Beta)](https://www.intel.com/content/www/us/en/developer/tools/devcloud/services.html).
-2. Explore the optimizations delivered through the [Intel Extension for Tensorflow* (ITEX)](https://github.com/intel/intel-extension-for-tensorflow), [docs](https://intel.github.io/intel-extension-for-tensorflow/latest/get_started.html).
+2. Explore the optimizations delivered through the [Intel Extension for Pytorch* (IPEX)](https://github.com/intel/intel-extension-for-pytorch), [docs](https://intel.github.io/intel-extension-for-pytorch/cpu/latest/).
 3. Understand the specifics of effectively utilizing the following Intel® hardware for AI workloads, (1) the [4th Generation Intel® Xeon® Scalable Processor](https://ark.intel.com/content/www/us/en/ark/products/231746/intel-xeon-platinum-8480-processor-105m-cache-2-00-ghz.html) (codenamed Sapphire Rapids) and (2) the [Intel® Data Center GPU Max 1100](https://www.intel.com/content/www/us/en/products/sku/232876/intel-data-center-gpu-max-1100/specifications.html) (codenamed Ponte Vecchio).
 
 ## Pre-requisites
