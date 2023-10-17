@@ -19,22 +19,26 @@ Most Linux/MacOS distros comes pre-installed with an ssh client.<br> If you are 
 
 Once registered on IDC, perform the following steps to access the IDC "Scheduled access" nodes. <br>
 1. <details><summary>Sign-in to https://cloud.intel.com .</summary> <img width="847" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/1b85cbdb-1e0e-4d7e-b087-ab2713469603"></details>
-2. <details><summary>Post your ssh public-key on IDC profile.</summary> If you already have a key under $HOME/.ssh/id_rsa.pub, You could use that key itself. <br>If not, generate a key-pair using the ssh-keygen command (press Enter to accept blank defaults).<br> <img width="738" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/ea42e395-27cd-42dc-8aaf-7394b8b9daaa"></details>
+2. Post your ssh public-key on IDC profile. Generate your ssh key with the command below:
+```
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519_idc -C "your@email.com"
+```
 3. <details><summary>Visit 'View Instances' tab and ensure that there are no running instances.</summary> <img width="484" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/0567522e-75bc-41a0-ac2d-4bfe0a5fd490"></details>
 4. <details><summary>Go to 'Launch Instance' tab and launch the 'Schedule Access' instance (it's the first option in the list).</summary><img width="848" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/1b7705ef-96b2-49fe-9c40-12f87df160a3"></details>
 5. <details><summary>Go to 'View Instances' tab and check if the instance you created is getting listed there.</summary><img width="836" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/fbfdd35b-dd8e-4ded-96b2-b2bd3334eb58"></details>
 6. &nbsp;<details><summary>Create an SSH config file.</summary>
    Create a file named 'config' at the path $HOME/.ssh/config. Copy the below contents and change username.
    ```
-   Host myidc
+   Host myidc #←YOU CAN CALL IT ANYTHING
    Hostname idcbetabatch.eglb.intel.com
-   User uXXXXXX ## Change this to reflect your username obtained in step 4
+   User uXXXXXX #← Request "scheduled access" at https://scheduler.cloud.intel.com/#/systems" to get your user identifier.
+   IdentityFile ~/.ssh/id_ed25519_idc
+   #ProxyCommand /usr/bin/nc -x YourProxy:XXXX %h %p # Uncomment if necessary
    ServerAliveInterval 60
    ServerAliveCountMax 10
-   StrictHostKeyChecking no
+   StrictHostKeyChecking no # Frequent changes in the setup are taking place now, this will help reduce the known hosts errors.
    UserKnownHostsFile=/dev/null
    ```
-   <img width="596" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/41ea8530-8df9-4427-8499-d796b67c4e2d"></details>
 7. <details><summary>Open command prompt and try logging in as 'ssh myidc'</summary><img width="401" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/8cc7026e-bc83-4a3e-8c1e-32bd0939f24c"></details>
 Note: The above steps assumes that your laptop is connected to an open Internet and it is **NOT** behind a corporate VPN/proxy. Additional steps as highlighted in this [guide](https://github.com/bjodom/idc#ssh-config-client-setup-assumes-no-proxy-needed) might be needed to get it working behind a proxy.
 
@@ -72,6 +76,12 @@ Note : Below step could take 15 ~ 20 mins to complete. This step has to be execu
 7. Open browser on laptop and hit the url copied earlier (starting with 127.0.01:88xx)
 &nbsp;<details><summary>--> info</summary>The browser would open a Jupyter workspace with the ipynb notebook files<br><img width="639" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/6a4ea3b1-4ba1-45b1-8afe-443a77c2257d"></details>
 8. You are all set to run through the exercises in the ipynb notebooks.<br>
+9. Hereafter, what to do if the terminal window is closed by mistake or the SSH connection gets interrupted? <br>
+&nbsp;<details><summary>--> info</summary>You can resume your work by repeating the above 8 steps with the exception of step:4 where you have to instead run 
+   ```
+   source resume_env.sh
+   ``` 
+</details>
 
 
 ## Common issues 
