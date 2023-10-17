@@ -72,12 +72,6 @@ Note : Below step could take 15 ~ 20 mins to complete. This step has to be execu
 7. Open browser on laptop and hit the url copied earlier (starting with 127.0.01:88xx)
 &nbsp;<details><summary>--> info</summary>The browser would open a Jupyter workspace with the ipynb notebook files<br><img width="639" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/6a4ea3b1-4ba1-45b1-8afe-443a77c2257d"></details>
 8. You are all set to run through the exercises in the ipynb notebooks.<br>
-9. Hereafter, what to do if the terminal window is closed by mistake or the SSH connection gets interrupted? <br>
-&nbsp;<details><summary>--> info</summary>You can resume your work by repeating the above 8 steps with the exception of step:4 where you have to instead run 
-   ```
-   source resume_env.sh
-   ``` 
-</details>
 
 
 ## Common issues 
