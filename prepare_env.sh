@@ -56,7 +56,7 @@ source $ENV_NAME/bin/activate
 pip install --upgrade pip
 pip install scikit-image jupyter matplotlib tqdm ipykernel prettytable
 python -m pip install torch==2.0.1a0 torchvision==0.15.2a0 intel_extension_for_pytorch==2.0.110+xpu --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
-pip install ipykernel
+pip install diffusers transformers accelerate scipy safetensors
 jupyter kernelspec uninstall $ENV_NAME -y
 python -m ipykernel install --user --name=$ENV_NAME
 
