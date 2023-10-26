@@ -47,7 +47,8 @@ Once registered on IDC, perform the following steps to access the IDC "Scheduled
    ```
 
 7. <details><summary>Open command prompt and try logging in as 'ssh myidc'</summary><img width="401" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/8cc7026e-bc83-4a3e-8c1e-32bd0939f24c"></details>
-   Note: The above steps assumes that your laptop is connected to an open Internet and it is **NOT** behind a corporate VPN/proxy. Additional steps as highlighted in this [guide](https://github.com/bjodom/idc#ssh-config-client-setup-assumes-no-proxy-needed) might be needed to get it working behind a proxy.
+   Note: The above steps assumes that your laptop is connected to an open Internet and it is **NOT** behind a corporate VPN/proxy. 
+   If you are using a corporate VPN/proxy, be sure to uncomment and set the ProxyCommand correctly in the ssh configuration.
 
 ## Getting started on AI workshop 
 Run the below steps to get started with the handson workshop on IDC. <br>
