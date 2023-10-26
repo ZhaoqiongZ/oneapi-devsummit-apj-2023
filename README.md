@@ -1,15 +1,14 @@
 
 ## Welcome
-Thank you for choosing to attend the AI Workshop @ oneAPI Devsummit 2023. This github repository holds the necessary artifacts for participating in the handson AI workshop. <br>!!*Update* --> For a detailed walkthrough of this content, refer the presentation recording [here](https://youtu.be/mN_49JgjY-I)
+Thank you for choosing to attend the AI Workshop @ oneAPI Devsummit 2023. This github repository holds the necessary artifacts for participating in the handson AI workshop. 
 
 ## Objectives
-1. Get the hands-on experience on the new [Intel® Developer Cloud (Beta)](https://www.intel.com/content/www/us/en/developer/tools/devcloud/services.html).
+1. Get the hands-on experience on the new [Intel® Developer Cloud](https://console.cloud.intel.com/training).
 2. Explore the optimizations delivered through the [Intel Extension for Pytorch* (IPEX)](https://github.com/intel/intel-extension-for-pytorch), [docs](https://intel.github.io/intel-extension-for-pytorch/cpu/latest/).
 3. Understand the specifics of effectively utilizing the following Intel® hardware for AI workloads, (1) the [4th Generation Intel® Xeon® Scalable Processor](https://ark.intel.com/content/www/us/en/ark/products/231746/intel-xeon-platinum-8480-processor-105m-cache-2-00-ghz.html) (codenamed Sapphire Rapids) and (2) the [Intel® Data Center GPU Max 1100](https://www.intel.com/content/www/us/en/products/sku/232876/intel-data-center-gpu-max-1100/specifications.html) (codenamed Ponte Vecchio).
 
 ## Pre-requisites
-1. *You have registered and can login to the [Intel® Developer Cloud (IDC)](https://www.intel.com/content/www/us/en/developer/tools/devcloud/services.html).* <br>
-Yet to register on IDC? This [guide](https://github.com/bjodom/idc#account-registration) helps you get started.
+1. *You have registered and can login to the [Intel® Developer Cloud](https://console.cloud.intel.com/training).* <br>
 2. *Your laptop has a basic ssh client installed.*<br>
 Most Linux/MacOS distros comes pre-installed with an ssh client.<br> If you are on Microsoft Windows, open Command Prompt and verify that the commands 'ssh' and 'ssh-keygen' works. If it says 'command not recognized', you could install an ssh client like [MobaXterm*](https://mobaxterm.mobatek.net/download.html) or [Putty*](https://www.putty.org/).
 3.  *You have access to the [oneAPI Discord](https://discord.gg/ycwqTP6) channel.*<br> This discord channel can help resolve your queries during and after the workshop.
@@ -18,32 +17,40 @@ Most Linux/MacOS distros comes pre-installed with an ssh client.<br> If you are 
 <details><summary>Note : Have you already ssh'ed on to the head node? If so, you can skip this section.</summary> <img width="578" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/2af832b8-f7c8-4883-8333-f0b401258e8f"></details>
 
 Once registered on IDC, perform the following steps to access the IDC "Scheduled access" nodes. <br>
-1. <details><summary>Sign-in to https://cloud.intel.com .</summary> <img width="847" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/1b85cbdb-1e0e-4d7e-b087-ab2713469603"></details>
-2. Post your ssh public-key on IDC profile. Generate your ssh key with the command below:
-```
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519_idc -C "your@email.com"
-```
-3. <details><summary>Visit 'View Instances' tab and ensure that there are no running instances.</summary> <img width="484" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/0567522e-75bc-41a0-ac2d-4bfe0a5fd490"></details>
-4. <details><summary>Go to 'Launch Instance' tab and launch the 'Schedule Access' instance (it's the first option in the list).</summary><img width="848" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/1b7705ef-96b2-49fe-9c40-12f87df160a3"></details>
-5. <details><summary>Go to 'View Instances' tab and check if the instance you created is getting listed there.</summary><img width="836" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/fbfdd35b-dd8e-4ded-96b2-b2bd3334eb58"></details>
-6. &nbsp;<details><summary>Create an SSH config file.</summary>
+1. <details><summary>Sign-in to https://console.cloud.intel.com/training, click on Training and Workshops</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/login.jpg"></details>
+
+2. <details><summary>Choose a session and click into the session.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/choose_session.jpg"></details>
+
+3. <details><summary>Click on Option and connect to IDC in expert mode.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/choose_options.jpg"></details>
+
+4. <details><summary>Click on Upload Key.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/launch_ssh.jpg"></details>
+
+5. <details><summary>Upload your ssh key.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/upload_key.jpg"></details>
+   Note: If you don't have ssh key on your PC, you can click How to create a SSH key in this page and follow the instructions to create your ssh key.
+
+6. <details><summary>Then click on Launch Using SSH.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/launch_ssh.jpg"></details>
+
+7. <details><summary>Copy your username and head node host and save in the note.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/ssh_connection.jpg"></details>
+
+6. <details><summary>Create an SSH config file.</summary>
    Create a file named 'config' at the path $HOME/.ssh/config. Copy the below contents and change username.
    ```
    Host myidc #←YOU CAN CALL IT ANYTHING
    Hostname idcbetabatch.eglb.intel.com
    User uXXXXXX #← Request "scheduled access" at https://scheduler.cloud.intel.com/#/systems" to get your user identifier.
-   IdentityFile ~/.ssh/id_ed25519_idc
+   IdentityFile ~/.ssh/id_rsa
    #ProxyCommand /usr/bin/nc -x YourProxy:XXXX %h %p # Uncomment if necessary
    ServerAliveInterval 60
    ServerAliveCountMax 10
    StrictHostKeyChecking no # Frequent changes in the setup are taking place now, this will help reduce the known hosts errors.
    UserKnownHostsFile=/dev/null
    ```
+
 7. <details><summary>Open command prompt and try logging in as 'ssh myidc'</summary><img width="401" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/8cc7026e-bc83-4a3e-8c1e-32bd0939f24c"></details>
 Note: The above steps assumes that your laptop is connected to an open Internet and it is **NOT** behind a corporate VPN/proxy. Additional steps as highlighted in this [guide](https://github.com/bjodom/idc#ssh-config-client-setup-assumes-no-proxy-needed) might be needed to get it working behind a proxy.
 
 ## Getting started on AI workshop 
-Run the below steps (1 through 7) to get started with the handson workshop on IDC. <br>
+Run the below steps to get started with the handson workshop on IDC. <br>
 1. SSH into idc head node. <br>
    ```
    ssh myidc
@@ -73,15 +80,11 @@ Note : Below step could take 15 ~ 20 mins to complete. This step has to be execu
    ssh -L port-number:ip-address:portnumber myidc
    ```
     <details><summary>--> info</summary>sample ssh command --> ssh -L 88xx:10.0.0.x:88xx myidc <br> include the ip-address and port number from step:5<br><img width="500" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/23a39c65-353b-4061-b42d-6fdf45bf9eb2"></details>
-7. Open browser on laptop and hit the url copied earlier (starting with 127.0.01:88xx)
-&nbsp;<details><summary>--> info</summary>The browser would open a Jupyter workspace with the ipynb notebook files<br><img width="639" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/6a4ea3b1-4ba1-45b1-8afe-443a77c2257d"></details>
-8. You are all set to run through the exercises in the ipynb notebooks.<br>
-9. Hereafter, what to do if the terminal window is closed by mistake or the SSH connection gets interrupted? <br>
-&nbsp;<details><summary>--> info</summary>You can resume your work by repeating the above 8 steps with the exception of step:4 where you have to instead run 
-   ```
-   source resume_env.sh
-   ``` 
-</details>
+7. Open browser on laptop and hit the url copied earlier (starting with 127.0.01:88xx/tree?token=xxxxx)
+<details><summary>--> info</summary>The browser would open a Jupyter workspace with the ipynb notebook files<br><img width="639" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/6a4ea3b1-4ba1-45b1-8afe-443a77c2257d"></details>
+
+Now You are all set to run through the exercises in the ipynb notebooks.<br>v
+
 
 
 ## Common issues 
