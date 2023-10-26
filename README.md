@@ -23,7 +23,7 @@ Once registered on IDC, perform the following steps to access the IDC "Scheduled
 
 3. <details><summary>Click on Option and connect to IDC in expert mode.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/choose_options.jpg"></details>
 
-4. <details><summary>Click on Upload Key.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/launch_ssh.jpg"></details>
+4. <details><summary>Click on Upload Key.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/click_uploadkey.png"></details>
 
 5. <details><summary>Upload your ssh key.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/upload_key.jpg"></details>
    Note: If you don't have ssh key on your PC, you can click How to create a SSH key in this page and follow the instructions to create your ssh key.
