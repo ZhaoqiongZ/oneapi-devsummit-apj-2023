@@ -32,8 +32,9 @@ Once registered on IDC, perform the following steps to access the IDC "Scheduled
 
 7. <details><summary>Copy your username and head node host and save in the note.</summary> <img width="847" alt="image" src="https://github.com/ZhaoqiongZ/oneapi-devsummit-apj-2023/raw/main/assets/ssh_connection.jpg"></details>
 
-6. <details><summary>Create an SSH config file.</summary>
+8. <details><summary>Create an SSH config file.</summary>
    Create a file named 'config' at the path $HOME/.ssh/config. Copy the below contents and change username.
+
    ```
    Host myidc #←YOU CAN CALL IT ANYTHING
    Hostname idcbetabatch.eglb.intel.com
@@ -46,7 +47,7 @@ Once registered on IDC, perform the following steps to access the IDC "Scheduled
    UserKnownHostsFile=/dev/null
    ```
 
-7. <details><summary>Open command prompt and try logging in as 'ssh myidc'</summary><img width="401" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/8cc7026e-bc83-4a3e-8c1e-32bd0939f24c"></details>
+9. <details><summary>Open command prompt and try logging in as 'ssh myidc'</summary><img width="401" alt="image" src="https://github.com/vishnumadhu365/oneapi-devsummit-sea-2023/assets/33803027/8cc7026e-bc83-4a3e-8c1e-32bd0939f24c"></details>
    Note: The above steps assumes that your laptop is connected to an open Internet and it is **NOT** behind a corporate VPN/proxy. 
    If you are using a corporate VPN/proxy, be sure to uncomment and set the ProxyCommand correctly in the ssh configuration.
 
