@@ -39,8 +39,8 @@ python -m venv $ENV_NAME
 source $ENV_NAME/bin/activate
 pip install --upgrade pip
 pip install scikit-image jupyter matplotlib tqdm ipykernel prettytable
-pip3 install torch==2.0.1  --index-url https://download.pytorch.org/whl/cpu
-pip3 install intel_extension_for_pytorch
+pip3 install torch==2.1  --index-url https://download.pytorch.org/whl/cpu
+pip3 install intel_extension_for_pytorch==2.1.0
 pip install diffusers transformers accelerate scipy safetensors
 jupyter kernelspec uninstall $ENV_NAME -y
 python -m ipykernel install --user --name=$ENV_NAME
